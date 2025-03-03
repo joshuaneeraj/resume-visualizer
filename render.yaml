@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: resume-visualizer
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn -c gunicorn_config.py app:server
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9 

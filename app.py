@@ -30,8 +30,12 @@ app = dash.Dash(
     __name__,
     external_stylesheets=[dbc.themes.BOOTSTRAP],
     meta_tags=[{'name': 'viewport', 'content': 'width=device-width, initial-scale=1.0'}],
-    assets_folder='assets'
+    assets_folder='assets',
+    title="Resume Visualization"
 )
+
+# Expose the server variable for gunicorn
+server = app.server
 
 # Set the title
 app.title = "Joshua Soans - Interactive Resume"
