@@ -11,8 +11,8 @@ This project was developed entirely with the assistance of Claude (via Cursor), 
 1. Open Terminal
 2. Clone this repository (if you haven't already):
    ```bash
-   git clone <repository-url>
-   cd joshua-resumes/resume-visualizer
+   git clone git@github.com:joshuaneeraj/resume-visualizer.git
+   cd resume-visualizer
    ```
 
 3. Run the dashboard:
