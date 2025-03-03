@@ -2,9 +2,29 @@
 
 A clean, modern visualization of a LaTeX resume using Plotly Dash. This application presents professional experience, education, and skills in a well-organized web format, featuring radar charts for skills visualization.
 
+<table style="border-collapse: collapse;">
+<tr>
+<th width="50%" style="border: none;">Before: Traditional LaTeX Resume</th>
+<th width="50%" style="border: none;">After: Modern Web Visualization</th>
+</tr>
+<tr>
+<td width="50%"><img src="assets/docs/resume-before.png" alt="Traditional LaTeX Resume" width="100%"/></td>
+<td width="50%"><img src="assets/docs/resume-after.png" alt="Modern Resume Visualization" width="100%"/></td>
+</tr>
+</table>
+
 ## Development
 
-This project was developed entirely with the assistance of Claude (via Cursor), an AI coding assistant. The dashboard was created from scratch using only the original LaTeX resume as input, demonstrating the potential of AI-assisted development in creating professional web applications.
+This project was developed entirely with the assistance of Claude (via Cursor), an AI coding assistant. The initial prompt was simple: "Create a web-based visualization of my LaTeX resume using Plotly Dash, with radar charts to display skills in a modern, clean format."
+
+Using Cursor as the IDE and Claude as the pair programming assistant, we:
+- Converted a LaTeX resume into a structured web application
+- Implemented radar charts using Plotly for skills visualization
+- Built a responsive layout using Dash Bootstrap Components
+- Created a clean, professional design with company branding
+- Set up proper documentation and GitHub repository
+
+The entire development process, from initial concept to final deployment, demonstrates the potential of AI-assisted development in creating professional web applications.
 
 ## Quick Start (macOS)
 
