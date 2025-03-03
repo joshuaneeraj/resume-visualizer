@@ -341,7 +341,7 @@ app.layout = dbc.Container([
                                     margin=dict(l=10, r=10, t=25, b=10),
                                     title=dict(
                                         text=category,
-                                        font=dict(size=12, weight='bold', color='#000'),
+                                        font=dict(size=13, color='#000'),
                                         y=0.98,
                                         x=0,  # Left align the title
                                         xanchor='left'  # Ensure left alignment
