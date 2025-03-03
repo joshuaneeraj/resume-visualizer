@@ -1,0 +1,160 @@
+%-------------------------
+% Resume in Latex
+% Author: Joshua Soans
+% Template Source: https://github.com/sb2nov/resume
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+% Essential packages
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+% Page formatting
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins for optimal layout
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+% Basic document settings
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Section formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure ATS readability
+\pdfgentounicode=1
+
+% Custom commands for consistent formatting
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+\begin{document}
+
+% Header
+\begin{center}
+    \textbf{\Large \scshape Joshua Soans} \\ \vspace{2pt}
+    \small +1 919-785-8613 $|$ San Francisco $|$ \href{mailto:joshuasoans.13@gmail.com}{joshuasoans.13@gmail.com} $|$ 
+    \href{https://linkedin.com/in/joshuaneeraj}{linkedin.com/in/joshuaneeraj}
+\end{center}
+
+%-----------SUMMARY-----------
+\section{Summary}
+{
+    \small Data Scientist with 7+ years of experience driving business impact through data, advising C-suite executives and senior leadership across industries. Expertise in product analytics, A/B testing, and data engineering, with a proven track record of turning data into actionable insights for diverse stakeholders across Engineering, Product, Finance, and Sales.
+}
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Business Intelligence Engineer}{Aug. 2021 -- Present}
+      {Amazon}{Sunnyvale, CA}
+      \resumeItemListStart
+        \resumeItem{Driving the growth of FireTV and Alexa's multi-million dollar ads business through customer segmentation, bid pricing analytics, and placement optimization models}
+        \resumeItem{Designing, executing and analyzing over 100 A/B tests to launch new features, to optimize existing features and to evaluate marketing campaigns with sample sizes averaging 5 million customers}
+        \resumeItem{Forecasting customer engagement for over 100 million customers using ensemble methods, including hierarchical reconciliation across multiple dimensions like country and device}
+        \resumeItem{Recommending features and devices to customers using both content-based and collaborative filtering methods}
+        \resumeItem{Teaching best practices in experimentation, including approaches to minimize pre-test bias, Bayesian versus Frequentist approaches and effective power analysis}
+        \resumeItem{Extensive use of SQL, Python, Spark, Redshift, Tableau and most of the AWS data suite}
+      \resumeItemListEnd
+    
+    \resumeSubheading
+      {Senior Business Data Scientist}{May 2018 -- Aug. 2021}
+      {Red Hat}{Raleigh, NC}
+      \resumeItemListStart
+        \resumeItem{Leading data scientists \& engineers in designing dashboards on Tableau Online, providing real-time analytics on over \$1.6 billion in annual sales to over 200 sales users}
+        \resumeItem{Advising C-suite executives with actionable insights to drive the Sales Strategy for all of Red Hat North America}
+        \resumeItem{Leading SQL workshops and other on-the-job training on data tools meant for non-technical colleagues}
+        \resumeItem{Designing and maintaining data pipelines using Jupyter Notebooks, Airflow, Redshift and Tableau Online}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Analytics Engineering Intern}{June 2017 -- Aug. 2017}
+      {Careerscore}{Miami, FL}
+      \resumeItemListStart
+        \resumeItem{Sole analytic engineer at a 5-person startup, building the flagship product's recommendation database using Python \& SQL to scrape and store web data}
+        \resumeItem{Enabling data-driven decisions by mastering visualization tools such as RStudio, Plotly for Python, and Tableau}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Technical Account Manager}{July 2014 -- June 2016}
+      {Capillary Technologies}{Bengaluru, India}
+      \resumeItemListStart
+        \resumeItem{Leading cross-functional teams involving Engineering, Analytics, Operations and Customer Support to design and implement bespoke loyalty programs, retaining billings averaging over \$100,000 annually}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------SKILLS-----------
+\section{Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+        \textbf{Data Engineering \& Infrastructure:} SQL, dbt, ETL, Apache Airflow, Spark, AWS (Redshift, S3, Lambda) \\
+        \textbf{Product Analytics:} A/B Testing, Experiment Design, User Segmentation, Funnel Analysis, Causal Inference \\
+        \textbf{Data Science \& Tools:} Machine Learning, Forecasting, Retrieval-Augmented Generation, Python (pandas, numpy, scikit-learn), R, Git, Tableau
+    }}
+\end{itemize}
+
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {North Carolina State University}{Raleigh, NC}
+      {Master of Science in Operations Research}{Aug. 2016 -- May 2018}
+      \resumeItemListStart
+        \resumeItem{Coursework: Design and Analysis of Algorithms, Experimental Statistics for Engineers, Stochastic Models in Industrial Engineering, Linear Programming, Probability Theory \& Applications}
+      \resumeItemListEnd
+    
+    \resumeSubheading
+      {NIT Karnataka}{Surathkal, India}
+      {Bachelor of Technology in Mechanical Engineering}{July 2009 -- May 2013}
+  \resumeSubHeadingListEnd
+
+%-----------PORTFOLIOS-----------
+\section{Portfolios}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Tableau Portfolio:} \href{https://public.tableau.com/profile/joshua.neeraj.soans#!/}{public.tableau.com/profile/joshua.neeraj.soans} \\
+     \textbf{Medium Blog:} \href{https://medium.com/@joshuaneeraj}{medium.com/@joshuaneeraj}
+    }}
+ \end{itemize}
+
+\end{document}

@@ -1,0 +1,26 @@
+{
+    "Data Engineering & Infrastructure": {
+        "SQL": 90,
+        "dbt": 85,
+        "ETL": 88,
+        "Apache Airflow": 80,
+        "Spark": 75,
+        "AWS (Redshift, S3, Lambda)": 85
+    },
+    "Product Analytics": {
+        "A/B Testing": 95,
+        "Experiment Design": 90,
+        "User Segmentation": 88,
+        "Funnel Analysis": 85,
+        "Causal Inference": 80
+    },
+    "Data Science & Tools": {
+        "Machine Learning": 85,
+        "Forecasting": 90,
+        "Retrieval-Augmented Generation": 75,
+        "Python": 95,
+        "R": 80,
+        "Git": 85,
+        "Tableau": 90
+    }
+} 
