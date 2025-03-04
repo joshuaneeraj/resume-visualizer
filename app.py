@@ -340,8 +340,8 @@ app.layout = dbc.Container([
                                     height=180,
                                     margin=dict(l=10, r=10, t=25, b=10),
                                     title=dict(
-                                        text=category,
-                                        font=dict(size=13, color='#000'),
+                                        text=f"<b>{category}</b>",
+                                        font=dict(size=14, color='#000'),
                                         y=0.98,
                                         x=0,  # Left align the title
                                         xanchor='left'  # Ensure left alignment
@@ -363,9 +363,8 @@ app.layout = dbc.Container([
                 dbc.CardBody([
                     html.Div([
                         html.Div([
-                            html.Span(key, style={'font-size': '0.85rem', 'font-weight': 'bold', 'margin-right': '8px'}),
-                            html.A(value, href=f"https://{value}", target="_blank", 
-                                  style={'font-size': '0.75rem'})
+                            html.A(key, href=f"https://{value}", target="_blank", 
+                                  style={'font-size': '0.85rem', 'font-weight': 'bold'})
                         ], className='mb-1') for key, value in portfolios.items()
                     ])
                 ], className='p-2')
