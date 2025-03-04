@@ -74,12 +74,16 @@ If you prefer to set things up manually:
 ```
 resume-visualizer/
 ├── app.py                      # Main application code
+├── render.yaml                 # Render deployment configuration
 ├── requirements.txt            # Python dependencies
-├── run.sh                     # Startup script
+├── run.sh                      # Startup script
 ├── raw-data/                  # Input data directory
 │   └── skills.json            # Skills data
 └── assets/                    # Static assets
     ├── custom.css             # Custom styling
+    ├── docs/                  # Documentation assets
+    │   ├── resume-before.png  # Before screenshot
+    │   └── resume-after.png   # After screenshot
     └── images/                # Logo images
         ├── dp.jpeg            # Profile picture
         ├── experience1.jpeg   # Most recent experience
