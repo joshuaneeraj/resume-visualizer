@@ -1,97 +1,107 @@
-/* Custom styles for the resume visualization */
+/* ---------------------------------------------------------------------------
+   Warm minimalist design system
+   --------------------------------------------------------------------------- */
+
+:root {
+    --bg: #F9F8F6;
+    --surface: #FFFFFF;
+    --text: #1A1A1A;
+    --text-secondary: #5C5C5C;
+    --text-muted: #8C8C8C;
+    --accent: #C45A3C;
+    --accent-hover: #A84B30;
+    --border: #E8E5E0;
+    --border-light: #F0EDE8;
+    --radius: 12px;
+    --radius-sm: 8px;
+    --shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.03);
+    --shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.06), 0 2px 4px rgba(0, 0, 0, 0.04);
+    --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* ---------------------------------------------------------------------------
+   Base
+   --------------------------------------------------------------------------- */
+
+* {
+    font-family: var(--font) !important;
+}
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f8f9fa;
-    color: #333;
+    background-color: var(--bg) !important;
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-.header {
-    background-color: #007bff;
-    color: white;
-    padding: 20px 0;
-    margin-bottom: 30px;
-    border-radius: 0 0 10px 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
+/* ---------------------------------------------------------------------------
+   Cards
+   --------------------------------------------------------------------------- */
 
 .card {
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    transition: transform 0.3s ease;
+    border: 1px solid var(--border) !important;
+    border-radius: var(--radius) !important;
+    box-shadow: var(--shadow) !important;
+    transition: box-shadow 0.2s ease, transform 0.2s ease !important;
+    background: var(--surface) !important;
+    overflow: hidden;
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover) !important;
+    transform: translateY(-2px);
 }
 
-.card-header {
-    background-color: #f1f8ff;
-    border-bottom: 1px solid #d1e7ff;
-    font-weight: bold;
+/* ---------------------------------------------------------------------------
+   Section headings
+   --------------------------------------------------------------------------- */
+
+.section-title {
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    padding-bottom: 6px;
+    border-bottom: 2px solid var(--accent);
+    display: inline-block;
 }
 
-.company-logo, .school-logo {
-    max-width: 80px;
-    max-height: 80px;
-    object-fit: contain;
-    border-radius: 5px;
-    padding: 5px;
-    background-color: white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+/* ---------------------------------------------------------------------------
+   Links
+   --------------------------------------------------------------------------- */
+
+a {
+    color: var(--accent) !important;
+    text-decoration: none !important;
+    transition: color 0.15s ease;
 }
 
-.timeline-item {
-    padding: 15px;
-    border-left: 3px solid #007bff;
-    margin-bottom: 15px;
-    position: relative;
+a:hover {
+    color: var(--accent-hover) !important;
 }
 
-.timeline-item:before {
-    content: '';
-    position: absolute;
-    left: -10px;
-    top: 15px;
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    background-color: #007bff;
-}
-
-.skill-slider {
-    margin-bottom: 15px;
-}
-
-.skill-category {
-    background-color: #f1f8ff;
-    padding: 15px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
+/* ---------------------------------------------------------------------------
+   Footer
+   --------------------------------------------------------------------------- */
 
 .footer {
-    background-color: #f8f9fa;
-    padding: 20px 0;
-    margin-top: 30px;
-    border-top: 1px solid #e9ecef;
-    text-align: center;
-    color: #6c757d;
+    margin: 0;
 }
 
-/* Responsive adjustments */
+/* ---------------------------------------------------------------------------
+   Responsive
+   --------------------------------------------------------------------------- */
+
+@media (max-width: 992px) {
+    .pe-lg-3 {
+        padding-right: 0 !important;
+        margin-bottom: 24px;
+    }
+}
+
 @media (max-width: 768px) {
-    .company-logo, .school-logo {
-        max-width: 60px;
-        max-height: 60px;
-    }
-    
     .card {
-        margin-bottom: 15px;
+        border-radius: 10px !important;
     }
-    
-    .header {
-        padding: 15px 0;
-    }
-} 
+}
