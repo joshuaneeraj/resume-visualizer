@@ -6,11 +6,7 @@ import base64
 from pathlib import Path
 import json
 
-try:
-    from PIL import Image
-    PIL_AVAILABLE = True
-except ImportError:
-    PIL_AVAILABLE = False
+from parse_latex import parse_resume
 
 
 def get_image_path(type_prefix, index):
@@ -36,6 +32,21 @@ SURFACE = '#FFFFFF'
 BG = '#F9F8F6'
 
 # ---------------------------------------------------------------------------
+# Parse resume data from LaTeX source
+# ---------------------------------------------------------------------------
+RESUME_TEX = Path(__file__).parent / 'raw-data' / 'resume-joshuasoans-draft.tex'
+SKILLS_JSON = Path(__file__).parent / 'raw-data' / 'skills.json'
+
+resume_data = parse_resume(RESUME_TEX)
+personal_info = resume_data['personal_info']
+experience = resume_data['experience']
+education = resume_data['education']
+portfolios = resume_data['portfolios']
+
+with open(SKILLS_JSON, 'r') as f:
+    skills = json.load(f)
+
+# ---------------------------------------------------------------------------
 # App initialization
 # ---------------------------------------------------------------------------
 app = dash.Dash(
@@ -48,111 +59,10 @@ app = dash.Dash(
         {'name': 'viewport', 'content': 'width=device-width, initial-scale=1.0'},
     ],
     assets_folder='assets',
-    title='Joshua Soans — Resume',
+    title=f"{personal_info['name']} \u2014 Resume",
 )
 
 server = app.server
-app.title = 'Joshua Soans — Interactive Resume'
-
-# ---------------------------------------------------------------------------
-# Resume data
-# ---------------------------------------------------------------------------
-personal_info = {
-    'name': 'Joshua Soans',
-    'location': 'San Francisco',
-    'email': 'joshuasoans.13@gmail.com',
-    'phone': '+1 919-785-8613',
-    'linkedin': 'linkedin.com/in/joshuaneeraj',
-    'summary': (
-        'Data Scientist with 7+ years of experience driving business impact '
-        'through data, advising C-suite executives and senior leadership across '
-        'industries. Expertise in product analytics, A/B testing, and data '
-        'engineering, with a proven track record of turning data into actionable '
-        'insights for diverse stakeholders across Engineering, Product, Finance, '
-        'and Sales.'
-    ),
-}
-
-experience = [
-    {
-        'company': 'Amazon',
-        'title': 'Business Intelligence Engineer',
-        'location': 'Sunnyvale, CA',
-        'period': 'Aug 2021 — Present',
-        'image_index': 1,
-        'responsibilities': [
-            "Driving the growth of FireTV and Alexa's multi-million dollar ads business through customer segmentation, bid pricing analytics, and placement optimization models",
-            'Designing, executing and analyzing over 100 A/B tests to launch new features, to optimize existing features and to evaluate marketing campaigns with sample sizes averaging 5 million customers',
-            'Forecasting customer engagement for over 100 million customers using ensemble methods, including hierarchical reconciliation across multiple dimensions like country and device',
-            'Recommending features and devices to customers using both content-based and collaborative filtering methods',
-            'Teaching best practices in experimentation, including approaches to minimize pre-test bias, Bayesian versus Frequentist approaches and effective power analysis',
-            'Extensive use of SQL, Python, Spark, Redshift, Tableau and most of the AWS data suite',
-        ],
-    },
-    {
-        'company': 'Red Hat',
-        'title': 'Senior Business Data Scientist',
-        'location': 'Raleigh, NC',
-        'period': 'May 2018 — Aug 2021',
-        'image_index': 2,
-        'responsibilities': [
-            'Leading data scientists & engineers in designing dashboards on Tableau Online, providing real-time analytics on over $1.6 billion in annual sales to over 200 sales users',
-            'Advising C-suite executives with actionable insights to drive the Sales Strategy for all of Red Hat North America',
-            'Leading SQL workshops and other on-the-job training on data tools meant for non-technical colleagues',
-            'Designing and maintaining data pipelines using Jupyter Notebooks, Airflow, Redshift and Tableau Online',
-        ],
-    },
-    {
-        'company': 'Careerscore',
-        'title': 'Analytics Engineering Intern',
-        'location': 'Miami, FL',
-        'period': 'Jun 2017 — Aug 2017',
-        'image_index': 3,
-        'responsibilities': [
-            "Sole analytic engineer at a 5-person startup, building the flagship product's recommendation database using Python & SQL to scrape and store web data",
-            'Enabling data-driven decisions by mastering visualization tools such as RStudio, Plotly for Python, and Tableau',
-        ],
-    },
-    {
-        'company': 'Capillary Technologies',
-        'title': 'Technical Account Manager',
-        'location': 'Bengaluru, India',
-        'period': 'Jul 2014 — Jun 2016',
-        'image_index': 4,
-        'responsibilities': [
-            'Leading cross-functional teams involving Engineering, Analytics, Operations and Customer Support to design and implement bespoke loyalty programs, retaining billings averaging over $100,000 annually',
-        ],
-    },
-]
-
-education = [
-    {
-        'institution': 'North Carolina State University',
-        'degree': 'Master of Science in Operations Research',
-        'location': 'Raleigh, NC',
-        'period': 'Aug 2016 — May 2018',
-        'image_index': 1,
-        'details': [
-            'Coursework: Design and Analysis of Algorithms, Experimental Statistics for Engineers, Stochastic Models in Industrial Engineering, Linear Programming, Probability Theory & Applications',
-        ],
-    },
-    {
-        'institution': 'NIT Karnataka',
-        'degree': 'Bachelor of Technology in Mechanical Engineering',
-        'location': 'Surathkal, India',
-        'period': 'Jul 2009 — May 2013',
-        'image_index': 2,
-        'details': [],
-    },
-]
-
-with open('raw-data/skills.json', 'r') as f:
-    skills = json.load(f)
-
-portfolios = {
-    'Tableau Portfolio': 'public.tableau.com/profile/joshua.neeraj.soans',
-    'Medium Blog': 'medium.com/@joshuaneeraj',
-}
 
 # ---------------------------------------------------------------------------
 # Encode images
